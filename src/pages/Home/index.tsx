@@ -1,7 +1,5 @@
-import { useQuery } from '@apollo/client';
-
 import { Header } from '../../components/Header';
-import { Player } from '../../components/Player';
+import { PlayerVideo } from '../../components/Player';
 import { SideBar } from '../../components/SideBar';
 
 export function Home() {
@@ -9,7 +7,7 @@ export function Home() {
     <div className='flex flex-col min-h-screen'>
       <Header />
       <main className='flex flex-1'>
-        <Player />
+        <PlayerVideo />
         <SideBar />
       </main>
     </div>

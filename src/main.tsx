@@ -6,11 +6,14 @@ import { Routes } from './routes';
 import { client } from './configs/apollo';
 
 import './css/global.css';
+import { VideoContextProvider } from './context/VideoContext';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <Routes />
+      <VideoContextProvider>
+        <Routes />
+      </VideoContextProvider>
     </ApolloProvider>
   </StrictMode>
 );

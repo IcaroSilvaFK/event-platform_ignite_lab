@@ -11,18 +11,20 @@ export function VideoDescription({
   description,
 }: IVideoDescriptionProps) {
   return (
-    <div className='flex items-center justify-between p-4'>
-      <div className='p-4'>
-        <h3 className='text-2xl mb-2'>{title}</h3>
+    <div className='flex items-start justify-between p-8 max-w-[1100px] mx-auto'>
+      <div className='flex-1'>
+        <h1 className='text-2xl mb-2'>{title}</h1>
         <p className='text-gray-300  max-w-[600px]'>{description}</p>
       </div>
       <div className='shrink flex flex-col gap-4'>
         <Button
+          href='/'
           text='comunidade do discord'
           type='contains'
           icon={<DiscordLogo size={25} weight='bold' />}
         />
         <Button
+          href='/'
           text='Acesse o desafio'
           type='outline'
           icon={<Lightning size={25} weight='bold' />}

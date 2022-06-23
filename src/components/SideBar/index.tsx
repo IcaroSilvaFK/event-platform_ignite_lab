@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import { useVideo } from '../../hooks/useVideo';
 
 import { Lesson } from '../Lesson';
 
@@ -23,9 +24,14 @@ const QUERY_LESSONS = gql`
 `;
 
 export function SideBar() {
+  const { setCurrentId, currentVideo } = useVideo();
   const { data } = useQuery<{ lessons: ILessionsResponseProps[] }>(
     QUERY_LESSONS
   );
+
+  function changeCurrentId(id: string) {
+    setCurrentId(id);
+  }
 
   return (
     <aside className='w-[348px] bg-gray-700 p-6 border-l border-gray-600'>
@@ -34,7 +40,12 @@ export function SideBar() {
       </span>
       <div className='flex flex-col gap-8'>
         {data?.lessons.map((lesson) => (
-          <Lesson {...lesson} key={lesson.id} />
+          <Lesson
+            {...lesson}
+            key={lesson.id}
+            isaCtive={currentVideo?.id === lesson.id}
+            onClick={() => changeCurrentId(lesson.id)}
+          />
         ))}
       </div>
     </aside>
