@@ -19,16 +19,18 @@ export function VideoDescription({
       <div className='shrink flex flex-col gap-4'>
         <Button
           href='/'
-          text='comunidade do discord'
           type='contains'
           icon={<DiscordLogo size={25} weight='bold' />}
-        />
+        >
+          comunidade do discord
+        </Button>
         <Button
           href='/'
-          text='Acesse o desafio'
           type='outline'
           icon={<Lightning size={25} weight='bold' />}
-        />
+        >
+          Acesse o desafio
+        </Button>
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
+import { ReactNode } from "react";
+
 interface IPropsButton {
   type: 'contains' | 'outline';
-  text: string;
+  children: ReactNode;
   icon?: JSX.Element;
   href: string;
 }
 
-export function Button({ text, type, icon, href }: IPropsButton) {
+export function Button({ children, type, icon, href }: IPropsButton) {
   return type === 'contains' ? (
     <a
       href={href}
@@ -15,7 +17,7 @@ export function Button({ text, type, icon, href }: IPropsButton) {
     '
     >
       <span>{icon}</span>
-      <span className='uppercase text-sm font-bold'>{text}</span>
+      <span className='uppercase text-sm font-bold'>{children}</span>
     </a>
   ) : (
     <a
@@ -26,7 +28,7 @@ export function Button({ text, type, icon, href }: IPropsButton) {
   '
     >
       <span>{icon}</span>
-      <span className='uppercase text-sm font-bold'>{text}</span>
+      <span className='uppercase text-sm font-bold'>{children}</span>
     </a>
   );
 }

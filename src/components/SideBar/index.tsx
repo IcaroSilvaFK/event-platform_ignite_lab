@@ -43,7 +43,7 @@ export function SideBar() {
           <Lesson
             {...lesson}
             key={lesson.id}
-            isaCtive={currentVideo?.id === lesson.id}
+            isActive={currentVideo?.id === lesson.id}
             onClick={() => changeCurrentId(lesson.id)}
           />
         ))}
