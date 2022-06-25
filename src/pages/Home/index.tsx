@@ -2,6 +2,8 @@ import { Header } from '../../components/Header';
 import { PlayerVideo } from '../../components/Player';
 import { SideBar } from '../../components/SideBar';
 
+// typescript react apollo
+
 export function Home() {
   return (
     <div className='flex flex-col min-h-screen'>
