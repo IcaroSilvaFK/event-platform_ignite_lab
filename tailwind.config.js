@@ -31,6 +31,11 @@ module.exports = {
       fontFamily: {
         roboto: "'Roboto', sans-serif;",
       },
+      backgroundImage: {
+        blur: "url('/src/assets/blurignite.png')",
+        code: "url('/src/assets/code_mock.png')",
+        react: "url('/src/assets/ReactJS.png')",
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

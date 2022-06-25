@@ -7,6 +7,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body,
+html,
+#root {
+  @apply h-full w-full;
+}
+
 body::-webkit-scrollbar {
   background: transparent;
   width: 10px;
