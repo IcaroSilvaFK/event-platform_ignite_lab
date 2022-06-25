@@ -11,6 +11,7 @@ interface ILessonProps {
   availableAt: string;
   onClick: () => void;
   isActive: boolean;
+  slug: string;
 }
 
 export function Lesson({
@@ -19,6 +20,7 @@ export function Lesson({
   availableAt,
   onClick,
   isActive,
+  slug,
 }: ILessonProps) {
   const isLessonAvailable = isPast(new Date(availableAt));
   const availableDateFormatted = format(
@@ -30,7 +32,11 @@ export function Lesson({
   );
 
   return (
-    <Link to='/' onClick={onClick} className='relative'>
+    <Link
+      to={`/event/lesson/${slug}`}
+      onClick={onClick}
+      className='relative group'
+    >
       <span className='text-gray-300'>{availableDateFormatted}</span>
       {isActive && (
         <div className='absolute -left-4 top-[50%]'>
@@ -41,7 +47,7 @@ export function Lesson({
         className={
           isActive
             ? 'bg-green-500 text-white rounded p-4 mt-2 relative z-10'
-            : 'rounded border border-gray-500 p-4 mt-2'
+            : 'rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500'
         }
       >
         <header className='flex items-center justify-between'>
@@ -61,7 +67,11 @@ export function Lesson({
             </span>
           )}
 
-          <span className={`text-xs rounded px-2 py-[2px] text-white border ${isActive? 'border-whtie': 'border-green-300'} font-bold uppercase`}>
+          <span
+            className={`text-xs rounded px-2 py-[2px] text-white border ${
+              isActive ? 'border-whtie' : 'border-green-300'
+            } font-bold uppercase`}
+          >
             {lessonType === 'class' ? 'aula prática' : 'ao vivo'}
           </span>
         </header>

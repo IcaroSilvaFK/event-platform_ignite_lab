@@ -55,7 +55,7 @@ export function VideoContextProvider({ children }: { children: ReactNode }) {
         return;
       }
       const { data } = await getCurrentVideo({
-        variables: { id: 'cl4pwg9cpdeaq0blsdx1hl1za' },
+        variables: { id: 'SO4-izct7Mc' },
       });
 
       setCurrentVideo(data.lesson);

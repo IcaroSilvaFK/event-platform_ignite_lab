@@ -41,14 +41,17 @@ const QUERY_LESSON = gql`
 export function PlayerVideo() {
   const { data } = useQuery<{ lesson: IQueryProps }>(QUERY_LESSON);
   const { currentVideo } = useVideo();
-
+  console.log(currentVideo?.videoId);
   return (
     <div className='flex-1'>
       <div className='bg-black flex justify-center'>
         <div className='h-full w-full max-w-[1100px] max-h-[60vh] aspect-video'>
           {currentVideo && (
             <Player>
-              <Youtube videoId={currentVideo.videoId} />
+              <Youtube
+                videoId={currentVideo.videoId}
+                key={currentVideo.videoId}
+              />
               <DefaultUi />
             </Player>
           )}
